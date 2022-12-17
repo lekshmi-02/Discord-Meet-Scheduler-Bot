@@ -46,7 +46,9 @@ def convert_date(date,month,year):
     
     return '{}/{}/{}'.format(date,month,year)
 
-@bot.command()
+
+
+@bot.event()
 async def poll(ctx,message):
     emb=discord.Embed(title="poll for meeting",description=f"{message}")
     msg=await ctx.channel.send(embed=emb)
