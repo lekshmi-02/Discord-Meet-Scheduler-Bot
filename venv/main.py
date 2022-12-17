@@ -27,12 +27,6 @@ async def on_message(msg):
     else:
         if user_msg=="hello":
             await msg.channel.send("hai")
-
-
-
-
-
-
 def convert_time(hr,min):
     hr=int(input[0:2])
     min=int(input[2:])
@@ -53,5 +47,22 @@ async def poll(ctx,message):
     msg=await ctx.channel.send(embed=emb)
     await msg.add_reaction('👍')
     await msg.add_reaction('👎')
+
+@bot.command()
+async def hello(ctx):
+    def check(msg):
+        return msg.author == ctx.author and msg.channel==ctx.channel
+    await ctx.send("Enter the starting date of meeting")
+    startinput = await bot.wait_for("message",check=check)
+    startdate = startinput.content
+    await ctx.send("Enter the ending date of meeting")
+    endinput = await bot.wait_for("message",check=check)
+    edate = endinput.content
+    await ctx.send("Enter the starting time of meeting")
+    stimeinput = await bot.wait_for("message",check=check)
+    starttime = stimeinput.content
+    await ctx.send("Enter the ending time of meeting")
+    etimeinput = await bot.wait_for("message",check=check)
+    endtime = etimeinput.content
 
 bot.run(token)
