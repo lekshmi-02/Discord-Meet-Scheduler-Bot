@@ -26,6 +26,8 @@ async def on_message(msg):
     else:
         if user_msg=="hello":
             await msg.channel.send("hai")
+
+
 def convert_time(hr,min):
     hr=int(input[0:2])
     min=int(input[2:])
@@ -33,7 +35,6 @@ def convert_time(hr,min):
     if hr<12:
         postfix="AM"
     return '{}:{:02d}{}'.format(hr or 12,min,postfix)
-
 
 
 
