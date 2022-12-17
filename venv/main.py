@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 
 @bot.event
 async def on_ready():
-    print("Bot is connected to discord")
+    print("Bot is connected to discord!!")
 
 
 
