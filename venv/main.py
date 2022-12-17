@@ -27,7 +27,7 @@ async def on_message(msg):
     else:
         if user_msg=="hello":
             await msg.channel.send("hai")
-
+'''
 
 
 
