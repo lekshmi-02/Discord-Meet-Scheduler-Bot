@@ -16,13 +16,16 @@ bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 async def on_ready():
     print("Bot is connected to discord!!")
 
-@bot.command
+
+@bot.event
 async def on_message(msg):
-    if msg.author==bot.user:
+    user_msg=str(msg.content)
+    user=str(msg.author)
+    if user==bot.user:
         return
     else:
        #user_name=str(msg.author)
-    #channel_name=str(msg.channel.name)
+    #channel_name=str(msg.channel.name
         if msg.content=="hello":
             await msg.send("hai")
 
