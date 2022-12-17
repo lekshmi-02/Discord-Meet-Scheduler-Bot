@@ -1,5 +1,5 @@
 # created by virtualenv automatically
-### dotenv ###
+*### dotenv ###
 .env
 
 ### Python ###
@@ -198,4 +198,3 @@ pip-selfcheck.json
 # Ignore all local history of files
 .history
 .ionide
-
