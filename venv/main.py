@@ -36,4 +36,15 @@ async def test(ctx, arg):
 
 
 
+
+
+
+def convert_time(hr,min):
+    hr=int(input[0:2])
+    min=int(input[2:])
+    postfix="PM"
+    if hr<12:
+        postfix="AM"
+    return '{}:{:02d}{}'.format(hr or 12,min,postfix)
+
 bot.run(token)
