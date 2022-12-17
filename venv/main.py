@@ -39,6 +39,18 @@ def convert_time(hr,min):
     if hr<12:
         postfix="AM"
     return '{}:{:02d}{}'.format(hr or 12,min,postfix)
-def convert_date()
-def bju
+def convert_date(date,month,year):
+    year=int(input[0:4])
+    month=int(input[4:6])
+    date=int(input[6:8])
+    
+    return '{}/{}/{}'.format(date,month,year)
+
+@bot.command()
+async def poll(ctx,message):
+    emb=discord.Embed(title="poll for meeting",description=f"{message}")
+    msg=await ctx.channel.send(embed=emb)
+    await msg.add_reaction('👍')
+    await msg.add_reaction('👎')
+
 bot.run(token)
