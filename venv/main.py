@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from discord.ext import commands
 
 
+
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 
@@ -16,7 +17,7 @@ bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 async def on_ready():
     print("Bot is connected to discord!!")
 
-
+'''
 @bot.event
 async def on_message(msg):
     user_msg=str(msg.content)
@@ -46,9 +47,7 @@ def convert_date(date,month,year):
     
     return '{}/{}/{}'.format(date,month,year)
 
-
-
-@bot.event()
+@bot.command()
 async def poll(ctx,message):
     emb=discord.Embed(title="poll for meeting",description=f"{message}")
     msg=await ctx.channel.send(embed=emb)
