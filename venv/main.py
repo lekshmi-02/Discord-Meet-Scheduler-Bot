@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 async def on_ready():
     print("Bot is connected to discord!!")
 
-'''
+
 @bot.event
 async def on_message(msg):
     user_msg=str(msg.content)
