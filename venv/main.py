@@ -36,6 +36,4 @@ def convert_time(hr,min):
         postfix="AM"
     return '{}:{:02d}{}'.format(hr or 12,min,postfix)
 
-
-
 bot.run(token)
