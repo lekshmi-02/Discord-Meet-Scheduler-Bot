@@ -24,8 +24,10 @@ async def on_message(msg):
     if user==bot.user:
         return
     else:
-        if user_msg=="hello":
-            await msg.channel.send("hai")
+       #user_name=str(msg.author)
+    #channel_name=str(msg.channel.name
+        if msg.content=="hello":
+            await msg.send("hai")
 
 def convert_time(hr,min):
     hr=int(input[0:2])
@@ -37,6 +39,14 @@ def convert_time(hr,min):
 
 
 
+
+def convert_time(hr,min):
+    hr=int(input[0:2])
+    min=int(input[2:])
+    postfix="PM"
+    if hr<12:
+        postfix="AM"
+    return '{}:{:02d}{}'.format(hr or 12,min,postfix)
 
 
 
