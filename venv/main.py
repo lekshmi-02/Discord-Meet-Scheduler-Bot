@@ -41,6 +41,7 @@ def convert_time(hr,min):
     if hr<12:
         postfix="AM"
     return '{}:{:02d}{}'.format(hr or 12,min,postfix)
+def convert_date()
 
 
 
