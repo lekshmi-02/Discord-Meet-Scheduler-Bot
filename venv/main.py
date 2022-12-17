@@ -16,7 +16,7 @@ bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 async def on_ready():
     print("Bot is connected to discord!!")
 
-
+'''
 @bot.event
 async def on_message(msg):
     user_msg=str(msg.content)
@@ -26,14 +26,14 @@ async def on_message(msg):
     else:
         if user_msg=="hello":
             await msg.channel.send("hai")
+'''
 
 
-def convert_time(hr,min):
-    hr=int(input[0:2])
-    min=int(input[2:])
-    postfix="PM"
-    if hr<12:
-        postfix="AM"
-    return '{}:{:02d}{}'.format(hr or 12,min,postfix)
+
+@bot.command()
+async def test(ctx, arg):
+    await ctx.send(arg)
+
+
 
 bot.run(token)
