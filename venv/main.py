@@ -9,6 +9,7 @@ from discord.ext import commands
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
+bot_id = os.getenv('BOT_ID')
 
 bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 
@@ -28,13 +29,12 @@ async def on_ready():
 #         if user_msg=="hello":
 #             await msg.channel.send("hai")
 def convert_time(hr,min):
-    hr=int(input[0:2])
-    min=int(input[2:])
-    postfix="PM"
-    if hr<12:
-        postfix="AM"
+    # hr,min =int(input[0:2]);int(input[2:4])
+    postfix="AM"
+    if hr>12:
+        postfix="PM"
         hr-=12
-    return '{}:{:02d}'.format(hr or 12,min,postfix)
+    return '{}:{:02d} {}'.format(hr or 12,min,postfix)
 def convert_date(date,month,year):
     # year=int(input[0:4])
     # month=int(input[4:6])
@@ -61,25 +61,64 @@ async def date(ctx):
 async def time(ctx):
     def check(msg):
         return msg.author == ctx.author and msg.channel==ctx.channel
-    
     await ctx.send("Enter the time of meeting")
     hourinput = await bot.wait_for("message",check=check)
-    hour = hourinput.content
+    hour = int(hourinput.content)
     minuteinput = await bot.wait_for("message",check=check)
-    min = minuteinput.content
-    formattedtime = convert_time(hour,min)
+    min = int(minuteinput.content)
+    global formattedtime 
+    formattedtime= convert_time(hour,min)
     await ctx.send(formattedtime)
+
 
 @bot.command()
 async def poll(ctx):
-    emb=discord.Embed(title="Poll for meeting",description=f" A meeting is about to be scheduled on {formatteddate}\n Do you want to join?")
+    emb = discord.Embed(title="Poll for meeting",description=f" A meeting is about to be scheduled on {formatteddate} at {formattedtime} \n Do you want to join?")
     
-    poll_channel = bot.get_channel('POLL_CHANNEL')
-    msg=await ctx.channel.send(embed=emb)
-    await msg.add_reaction('👍')
-    await msg.add_reaction('👎')
-    await asyncio.sleep(10)
+    # poll_channel = bot.get_channel('POLL_CHANNEL')
+    msg = await ctx.channel.send(embed=emb)
+    up = '👍'
+    down = '👎'
+    await msg.add_reaction(up)
+    await msg.add_reaction(down)
+    await asyncio.sleep(30)
     await ctx.send("Oops!! Time is up")
 
+    message = await msg.channel.fetch_message(msg.id)
+    reaction = message.reactions
+    if up in reaction:
+        await ctx.channel.send("helloo")
+
+
+    # def check(reaction,user):
+    #     return user == ctx.author and str(reaction.emoji) in [up,down]
     
+
+    # mem = ctx.author
+
+    # while True :
+    #     reaction,user = await bot.wait_for("reaction_add",timeout = 30.0, check = check)
+
+    #     if(str(reaction.emoji)==up):
+    #         await ctx.send("Thankyou")
+    #     if(str(reaction.emoji)==down):
+    #         await ctx.send("Welcome")
+
+
+
+
+
+    # message = await ctx.channel.fetch_message(msg.id) 
+    # user = bot.get_user(int(bot_id))
+    # yes = 0
+    # no = 0
+    # for r in message.reactions:
+    #     if r.emoji == '👍':
+    #         yes +=1
+    #     if r.emoji == '👎':
+    #         no +=1
+
+    # if(yes>no):
+    #     await ctx.send("hello")
+
 bot.run(token)
