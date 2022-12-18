@@ -62,18 +62,6 @@ First of all we are creating a discord bot account
 git clone https://github.com/lekshmi-02/Mia.git
 ```
 
-
-
-```
-wget -qO- https://raw.githubusercontent.com/akkupy/Homelab/main/scripts/install_portainer.sh | bash
-```
-
-### Login to Portainer.
-
-Goto raspberry_ip:9000 and then login.
-
-Now just click App Templates and deploy applications!.
-
 # List of functions
 
 
@@ -89,27 +77,13 @@ List of all functions used within this project.
 |convert_time()|convert_time() function is used to convert user input time which is in the railway time format to 12 hour format.|
 |convert_date()|convert_date () function is used to format user input date|
 |command()|convert_date () function is used to format user input date|
-|date()|Install and Setup Jellyfin, A Software to provide media from a dedicated server to end-user devices via multiple apps|
-|check()|Install and Setup Filebrowser, A file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files|
-|time()|Install and Setup Heimdall, Organise all those links to your most used web sites and web applications in a simple way.|
-|poll()|Install and Setup Qbittorrent, An open-source software alternative to µTorrent.|
-|sleep()|Install and Setup sonarr, a PVR for usenet and bittorrent users.|
-|send()|Install and Setup radarr, A fork of Sonarr to work with movies à la Couchpotato.|
-|fetch_message()|Install and Setup jackett, translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.|
-|[](./docs/nextcloud.md)|Install and Setup nextcloud, A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.|
+|date()||
+|check()||
+|time()||
+|poll()||
+|sleep()||
+|send()||
+|fetch_message()||
 
 
 
-
-# Contact Me
- [![telegram](https://img.shields.io/badge/Akku-000000?style=for-the-badge&logo=telegram)](https://t.me/akkupy)
-
-
-# License
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
-
-Homelab is Free Software: You can use, study share and improve it at your
-will. Specifically you can redistribute and/or modify it under the terms of the
-[GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
-published by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version. 
