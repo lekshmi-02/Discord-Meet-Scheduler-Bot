@@ -85,9 +85,14 @@ async def poll(ctx):
     await ctx.send("Oops!! Time is up")
 
     message = await msg.channel.fetch_message(msg.id)
-    reaction = message.reactions
-    if up in reaction:
-        await ctx.channel.send("helloo")
+    for reaction in message.reactions:
+        if reaction.emoji == up:
+            yes = reaction.count
+        if reaction.emoji == down:
+            no = reaction.count
+    if yes>no:
+        await ctx.send("Hello")
+    
 
 
     # def check(reaction,user):
