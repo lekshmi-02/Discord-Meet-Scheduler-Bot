@@ -77,13 +77,14 @@ List of all functions used within this project.
 |convert_time()|convert_time() function is used to convert user input time which is in the railway time format to 12 hour format.|
 |convert_date()|convert_date () function is used to format user input date|
 |command()|convert_date () function is used to format user input date|
-|date()||
-|check()||
-|time()||
-|poll()||
-|sleep()||
+|date()[user-defined|date function is used to take input from user where date, month and year is taken separately.|
+|check()[user-defined]||
+|time()[user-defined]|time function is used to take input from user where hour and minute is taken separately.|
+|poll()|poll() function creates poll for the server, where users can react to the schedule.|
+|sleep()|sleep function stops the entire execution of the program for a specific time. |
 |send()||
 |fetch_message()||
+|run()||
 
 
 
