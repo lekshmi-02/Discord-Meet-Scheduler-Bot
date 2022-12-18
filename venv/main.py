@@ -1,3 +1,6 @@
+
+#importing necessary libraries
+
 import discord
 import os
 import asyncio
@@ -6,8 +9,9 @@ from dotenv import load_dotenv
 from discord.ext import commands
 
 
-
+#buit-in function from dotenv
 load_dotenv()
+#
 token = os.getenv('DISCORD_TOKEN')
 bot_id = os.getenv('BOT_ID')
 poll_id = os.getenv('POLL_ID')
