@@ -94,7 +94,7 @@ async def poll(ctx):
     for reaction in message.reactions:
         if reaction.emoji == up:
             yes = reaction.count
-            for i in reaction.users():
+            async for i in reaction.users():
                 users.append(user)
 
         if reaction.emoji == down:
