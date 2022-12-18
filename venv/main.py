@@ -10,6 +10,8 @@ from discord.ext import commands
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 bot_id = os.getenv('BOT_ID')
+poll_id = os.getenv('POLL_ID')
+ann_id = os.getenv('ANN_ID')
 # poll_id = os.getenv('POLL_CHANNEL')
 
 bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
@@ -75,26 +77,32 @@ async def time(ctx):
 @bot.command()
 async def poll(ctx):
     
-    emb = discord.Embed(title="Poll for meeting",description=f" A meeting is about to be scheduled on {formatteddate} at {formattedtime} \n Do you want to join?")
-    channel= bot.get_channel(1053333010696646718)
-    msg = await channel.send(emb)
-    
+    emb = discord.Embed(title="Poll for meeting",description=f" A meeting is about to be scheduled on {formatteddate} at {formattedtime} at  \n Do you want to join?")
+    channel= bot.get_channel(int(poll_id))
+    msg = await channel.send(embed = emb)
+    await ctx.send("Poll has begun!!")
     up = '👍'
     down = '👎'
     await msg.add_reaction(up)
     await msg.add_reaction(down)
     await asyncio.sleep(30)
 
-    #await ctx.send("Oops!! Time is up")
-    
+    await channel.send("Oops!! Time is up")
+    user = bot.get_user(int(bot_id))
+    users=[]
     message = await msg.channel.fetch_message(msg.id)
     for reaction in message.reactions:
         if reaction.emoji == up:
             yes = reaction.count
+            for i in reaction.users():
+                users.append(user)
+
         if reaction.emoji == down:
             no = reaction.count
     if yes>no:
-        await ctx.send("Hello")
+        ann_channel = bot.get_channel(int(ann_id))
+        await ann_channel.send("Meet Scheduled")
+    
 
 
 
