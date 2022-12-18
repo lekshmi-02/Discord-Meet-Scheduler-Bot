@@ -66,7 +66,11 @@ git clone https://github.com/lekshmi-02/Mia.git
 ### Bot Services
 
 * Any members in a server can easily schedule meets using this bot!!
-* 
+* Member who wants to conduct the meeting specifies the date and time of the meeting using !date and !time   commands.
+* Bot takes date and time as input for scheduling.
+* User can create poll by using !poll command.
+* Following that bot will create a poll for the users in the poll channel of the server.
+* If majority of the members agreed to the poll the the bot will send the details of the meeting in the     announcement channel of the server. 
 
 
 # List of functions
