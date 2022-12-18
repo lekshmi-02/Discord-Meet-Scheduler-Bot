@@ -83,19 +83,20 @@ List of all functions used within this project.
 
 | Functions | Description |
 | --------- | ----------- |
-|[getenv()](https://www.educative.io/answers/what-is-osgetenv-method-in-python)|getenv() method is used to extract the value of the environment variable key if it exists.|
-|[nginx_proxy_manager.md](./docs/nginx_proxy_manager.md)|Install and setup instructions for Nginx Proxy Manager (NPM)|
-|[Self Signed SSL Certificate](https://github.com/akkupy/Self_Signed_SSL_Cerificate)|Follow these steps for SSL Certificate Authority for Local Https Development(can be used with NPM)|
-|[pi-hole.md](./docs/pi-hole.md)|Install and Setup Pi-Hole for Network-Wide Ad Block|
-|[vaultwarden.md](./docs/vaultwarden.md)|Install and Setup Vaultwarden, A privately hosted password manager|
-|[jellyfin.md](./docs/jellyfin.md)|Install and Setup Jellyfin, A Software to provide media from a dedicated server to end-user devices via multiple apps|
-|[filebrowser.md](./docs/filebrowser.md)|Install and Setup Filebrowser, A file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files|
-|[heimdall.md](./docs/heimdall.md)|Install and Setup Heimdall, Organise all those links to your most used web sites and web applications in a simple way.|
-|[qbittorrent.md](./docs/qbittorrent.md)|Install and Setup Qbittorrent, An open-source software alternative to µTorrent.|
-|[sonarr.md](./docs/sonarr.md)|Install and Setup sonarr, a PVR for usenet and bittorrent users.|
-|[radarr.md](./docs/radarr.md)|Install and Setup radarr, A fork of Sonarr to work with movies à la Couchpotato.|
-|[jackett.md](./docs/jackett.md)|Install and Setup jackett, translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.|
-|[nextcloud.md](./docs/nextcloud.md)|Install and Setup nextcloud, A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.|
+|getenv()|getenv() method is used to extract the value of the environment variable key if it exists.|
+|on_ready()|on_ready() event is called when the bot has finished logging in and setting things up|
+|on_message)|on_message() function listens for any message that comes into any channel that the bot is in.|
+|convert_time()|convert_time() function is used to convert user input time which is in the railway time format to 12 hour format.|
+|convert_date()|convert_date () function is used to format user input date|
+|command()|convert_date () function is used to format user input date|
+|date()|Install and Setup Jellyfin, A Software to provide media from a dedicated server to end-user devices via multiple apps|
+|check()|Install and Setup Filebrowser, A file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files|
+|time()|Install and Setup Heimdall, Organise all those links to your most used web sites and web applications in a simple way.|
+|poll()|Install and Setup Qbittorrent, An open-source software alternative to µTorrent.|
+|sleep()|Install and Setup sonarr, a PVR for usenet and bittorrent users.|
+|send()|Install and Setup radarr, A fork of Sonarr to work with movies à la Couchpotato.|
+|fetch_message()|Install and Setup jackett, translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.|
+|[](./docs/nextcloud.md)|Install and Setup nextcloud, A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.|
 
 
 
