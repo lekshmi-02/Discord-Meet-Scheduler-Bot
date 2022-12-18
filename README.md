@@ -1,6 +1,7 @@
 # MIABOT- Discord Meet Scheduler Bot
 
 This repository describes the working of a discord meet scheduler bot using python.
+
 ![hehe](https://user-images.githubusercontent.com/85625961/208255209-dc19cd68-9a97-45d1-85f8-94f8601b9b0d.jpg)
 
 
@@ -62,17 +63,15 @@ First of all we are creating a discord bot account
 git clone https://github.com/lekshmi-02/Mia.git
 ```
 
+### Bot Services
 
+* Any members in a server can easily schedule meets using this bot!!
+* Member who wants to conduct the meeting specifies the date and time of the meeting using !date and !time   commands.
+* Bot takes date and time as input for scheduling.
+* User can create poll by using !poll command.
+* Following that bot will create a poll for the users in the poll channel of the server.
+* If majority of the members agreed to the poll the the bot will send the details of the meeting in the     announcement channel of the server. 
 
-```
-wget -qO- https://raw.githubusercontent.com/akkupy/Homelab/main/scripts/install_portainer.sh | bash
-```
-
-### Login to Portainer.
-
-Goto raspberry_ip:9000 and then login.
-
-Now just click App Templates and deploy applications!.
 
 # List of functions
 
@@ -83,32 +82,22 @@ List of all functions used within this project.
 
 | Functions | Description |
 | --------- | ----------- |
-|[getenv()](https://www.educative.io/answers/what-is-osgetenv-method-in-python)|getenv() method is used to extract the value of the environment variable key if it exists.|
-|[nginx_proxy_manager.md](./docs/nginx_proxy_manager.md)|Install and setup instructions for Nginx Proxy Manager (NPM)|
-|[Self Signed SSL Certificate](https://github.com/akkupy/Self_Signed_SSL_Cerificate)|Follow these steps for SSL Certificate Authority for Local Https Development(can be used with NPM)|
-|[pi-hole.md](./docs/pi-hole.md)|Install and Setup Pi-Hole for Network-Wide Ad Block|
-|[vaultwarden.md](./docs/vaultwarden.md)|Install and Setup Vaultwarden, A privately hosted password manager|
-|[jellyfin.md](./docs/jellyfin.md)|Install and Setup Jellyfin, A Software to provide media from a dedicated server to end-user devices via multiple apps|
-|[filebrowser.md](./docs/filebrowser.md)|Install and Setup Filebrowser, A file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files|
-|[heimdall.md](./docs/heimdall.md)|Install and Setup Heimdall, Organise all those links to your most used web sites and web applications in a simple way.|
-|[qbittorrent.md](./docs/qbittorrent.md)|Install and Setup Qbittorrent, An open-source software alternative to µTorrent.|
-|[sonarr.md](./docs/sonarr.md)|Install and Setup sonarr, a PVR for usenet and bittorrent users.|
-|[radarr.md](./docs/radarr.md)|Install and Setup radarr, A fork of Sonarr to work with movies à la Couchpotato.|
-|[jackett.md](./docs/jackett.md)|Install and Setup jackett, translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.|
-|[nextcloud.md](./docs/nextcloud.md)|Install and Setup nextcloud, A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.|
+|getenv()|getenv() method is used to extract the value of the environment variable key if it exists.|
+|on_ready()|on_ready() event is called when the bot has finished logging in and setting things up|
+|on_message)|on_message() function listens for any message that comes into any channel that the bot is in.|
+|convert_time()|convert_time() function is used to convert user input time which is in the railway time format to 12 hour format.|
+|convert_date()|convert_date () function is used to format user input date|
+|command()|convert_date () function is used to format user input date|
+|date()[user-defined|date function is used to take input from user where date, month and year is taken separately.|
+|time()[user-defined]|time function is used to take input from user where hour and minute is taken separately.|
+|poll()|poll() function creates poll for the server, where users can react to the schedule.|
+|sleep()|sleep function stops the entire execution of the program for a specific time. |
+|send()|The send() method returns the next value yielded by the generator, or raises StopIteration if the generator exits without yielding another value.|
+|fetch_message()|fetch_message function is used to fetch the count of users who reacted to the poll.|
 
-
-
-
-# Contact Me
- [![telegram](https://img.shields.io/badge/Akku-000000?style=for-the-badge&logo=telegram)](https://t.me/akkupy)
 
 
 # License
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
-Homelab is Free Software: You can use, study share and improve it at your
-will. Specifically you can redistribute and/or modify it under the terms of the
-[GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
-published by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version. 
+[![mit1](https://user-images.githubusercontent.com/85625961/208289339-9fc9a81e-53f3-46d4-bb1e-d34dd8cbf4e5.jpg)](https://opensource.org/licenses/MIT)
+
