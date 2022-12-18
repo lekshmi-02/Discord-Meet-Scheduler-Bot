@@ -82,9 +82,12 @@ List of all functions used within this project.
 |time()[user-defined]|time function is used to take input from user where hour and minute is taken separately.|
 |poll()|poll() function creates poll for the server, where users can react to the schedule.|
 |sleep()|sleep function stops the entire execution of the program for a specific time. |
-|send()||
-|fetch_message()||
+|send()|The send() method returns the next value yielded by the generator, or raises StopIteration if the generator exits without yielding another value.|
+|fetch_message()|fetch_message function is used to fetch the count of users who reacted to the poll.|
 |run()||
 
 
+# License
+
+[![mit1](https://user-images.githubusercontent.com/85625961/208289339-9fc9a81e-53f3-46d4-bb1e-d34dd8cbf4e5.jpg)](https://opensource.org/licenses/MIT)
 
