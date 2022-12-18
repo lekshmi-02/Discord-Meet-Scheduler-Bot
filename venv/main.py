@@ -21,16 +21,9 @@ bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 async def on_ready():
     print("Bot is connected to discord!!")
 
-
-# @bot.event
-# async def on_message(msg):
-#     user_msg=str(msg.content)
-#     user=str(msg.author)
-#     if user==bot.user:
-#         return
-#     else:
-#         if user_msg=="hello":
-#             await msg.channel.send("hai")
+@bot.command
+async def hello(ctx):
+    await ctx.send("Hi")
 def convert_time(hr,min):
     # hr,min =int(input[0:2]);int(input[2:4])
     postfix="AM"
@@ -85,56 +78,30 @@ async def poll(ctx):
     down = '👎'
     await msg.add_reaction(up)
     await msg.add_reaction(down)
-    await asyncio.sleep(30)
+    await asyncio.sleep(20)
 
     await channel.send("Oops!! Time is up")
     user = bot.get_user(int(bot_id))
-    users=[]
     message = await msg.channel.fetch_message(msg.id)
+    users = set()
     for reaction in message.reactions:
         if reaction.emoji == up:
             yes = reaction.count
-            async for i in reaction.users():
-                users.append(user)
-
+            # user.add(users)
         if reaction.emoji == down:
             no = reaction.count
     if yes>no:
         ann_channel = bot.get_channel(int(ann_id))
-        await ann_channel.send("Meet Scheduled")
+        '''response = discord.Embed(title="Event Details",description=f"Meet Scheduled \n Date: {formatteddate} \n Time :{formattedtime}")
+        member = list(users)
+        for i in range(0,len(member)):
+            member[i].send(embed=response)
+    ''' 
+        emb2 = discord.Embed(title="Event details" ,description=f"Meet scheduled on {formatteddate} at {formattedtime}")
+        ann_channel = bot.get_channel(int(ann_id))
+        await ann_channel.send(embed = emb2)
     
 
 
-
-    # def check(reaction,user):
-    #     return user == ctx.author and str(reaction.emoji) in [up,down]
-    
-
-    # mem = ctx.author
-
-    # while True :
-    #     reaction,user = await bot.wait_for("reaction_add",timeout = 30.0, check = check)
-
-    #     if(str(reaction.emoji)==up):
-    #         await ctx.send("Thankyou")
-    #     if(str(reaction.emoji)==down):
-    #         await ctx.send("Welcome")
-
-
-
-
-
-    # message = await ctx.channel.fetch_message(msg.id) 
-    # user = bot.get_user(int(bot_id))
-    # yes = 0
-    # no = 0
-    # for r in message.reactions:
-    #     if r.emoji == '👍':
-    #         yes +=1
-    #     if r.emoji == '👎':
-    #         no +=1
-
-    # if(yes>no):
-    #     await ctx.send("hello")
 
 bot.run(token)
