@@ -10,6 +10,7 @@ from discord.ext import commands
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 bot_id = os.getenv('BOT_ID')
+# poll_id = os.getenv('POLL_CHANNEL')
 
 bot = commands.Bot(command_prefix = '!',intents =discord.Intents.all())
 
@@ -73,17 +74,19 @@ async def time(ctx):
 
 @bot.command()
 async def poll(ctx):
-    emb = discord.Embed(title="Poll for meeting",description=f" A meeting is about to be scheduled on {formatteddate} at {formattedtime} \n Do you want to join?")
     
-    # poll_channel = bot.get_channel('POLL_CHANNEL')
-    msg = await ctx.channel.send(embed=emb)
+    emb = discord.Embed(title="Poll for meeting",description=f" A meeting is about to be scheduled on {formatteddate} at {formattedtime} \n Do you want to join?")
+    channel= bot.get_channel(1053333010696646718)
+    msg = await channel.send(emb)
+    
     up = '👍'
     down = '👎'
     await msg.add_reaction(up)
     await msg.add_reaction(down)
     await asyncio.sleep(30)
-    await ctx.send("Oops!! Time is up")
 
+    #await ctx.send("Oops!! Time is up")
+    
     message = await msg.channel.fetch_message(msg.id)
     for reaction in message.reactions:
         if reaction.emoji == up:
@@ -92,7 +95,7 @@ async def poll(ctx):
             no = reaction.count
     if yes>no:
         await ctx.send("Hello")
-    
+
 
 
     # def check(reaction,user):
