@@ -62,7 +62,7 @@ First of all we are creating a discord bot account
 git clone https://github.com/lekshmi-02/Mia.git
 ```
 
-After a reboot, run `install_portainer.sh`, to install Portainer.io
+
 
 ```
 wget -qO- https://raw.githubusercontent.com/akkupy/Homelab/main/scripts/install_portainer.sh | bash
