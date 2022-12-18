@@ -63,6 +63,12 @@ First of all we are creating a discord bot account
 git clone https://github.com/lekshmi-02/Mia.git
 ```
 
+### Bot Services
+
+* Any members in a server can easily schedule meets using this bot!!
+* 
+
+
 # List of functions
 
 
