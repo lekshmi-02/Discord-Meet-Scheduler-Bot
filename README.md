@@ -1,6 +1,7 @@
 # MIABOT- Discord Meet Scheduler Bot
 
 This repository describes the working of a discord meet scheduler bot using python.
+
 ![hehe](https://user-images.githubusercontent.com/85625961/208255209-dc19cd68-9a97-45d1-85f8-94f8601b9b0d.jpg)
 
 
